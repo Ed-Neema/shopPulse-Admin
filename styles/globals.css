@@ -1,27 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+html,
+body,
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  height: 100%;
+  font-family: 'Barlow', sans-serif;
+}
+img {
+  max-height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+input,
+textarea,
+select {
+  @apply border border-gray-200 rounded-md w-full py-2 px-3;
+  @apply mb-2;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+input:focus,
+textarea:focus,
+select:focus {
+  @apply border-primary;
+}
+
+h1 {
+  @apply text-secondary mb-4 text-xl font-bold;
+}
+
+label {
+  @apply text-gray-600 text-sm;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-4 py-1.5 w-1/4 flex items-center justify-center rounded-md shadow-sm;
+}
+
+table.basic {
+  @apply w-full bg-white rounded-md drop-shadow-md;
+}
+
+table.basic thead tr td,
+table.basic thead tr th {
+  @apply text-sm text-gray-600 uppercase border-b border-gray-200 px-4 py-2;
+}
+
+table.basic tr td {
+  @apply px-4 py-1;
+}
+
+table.basic a {
+  @apply px-4 rounded-sm inline-flex mx-1 items-center gap-1 text-sm py-1;
+}
+
+.btn-default,
+.btn-red {
+  @apply px-4 py-1 rounded-md;
+}
+
+.btn-red {
+  @apply bg-red text-white border border-red hover:scale-110 px-4 py-1 rounded-lg shadow-sm;
+}
+
+.btn-default {
+  @apply bg-white text-secondary px-4 py-1 rounded-lg hover:scale-110 border border-secondary shadow-sm;
+}
+.main-div {
+  background-image: url("/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: black;
+  opacity: 0.8; */
 }
