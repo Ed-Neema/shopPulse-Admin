@@ -7,6 +7,7 @@ import clientPromise from "@/lib/mongodb";
 
 const adminEmails = ["ednahakoth21@gmail.com"];
 export default NextAuth({
+  secret: process.env.SECRET,
   providers: [
     // OAuth authentication providers...
 
